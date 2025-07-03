@@ -1,0 +1,93 @@
+@use "./variables" as *;
+
+.burgerMenuContainer {
+  position: relative;
+  z-index: 1000;
+}
+
+.burgerIcon {
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  span {
+    width: 100%;
+    height: 3px;
+    background-color: $globTextColor;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    transform-origin: center;
+  }
+
+  &.open {
+    span {
+      &:nth-child(1) {
+        transform: rotate(45deg) translateY(12px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translateY(-12px);
+      }
+    }
+  }
+}
+
+.menuNav {
+  position: fixed;
+  top: 80px;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: $transparentBgColor;
+  transition: all 0.5s ease;
+  z-index: 999;
+  border-top: 4px solid $textColorGold;
+
+  &.open {
+    right: 0;
+  }
+
+  & > .menuAllContainer{
+    width: 400px;
+    height: 100%;
+    background: $globalColor;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 520px) {
+      width: 100%;
+    }
+
+    & > .socContent{
+      padding: 10px;
+      display: none;
+
+      @media (max-width: 580px) {
+        display: block;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      right: 0;
+      transition: 1s ease;
+
+      @media (max-width: 620px) {
+        width: 100%;
+      }
+
+    }
+  }
+
+
+}

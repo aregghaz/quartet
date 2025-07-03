@@ -1,0 +1,91 @@
+@use "./variables" as *;
+@use "./fonts" as *;
+
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: $globalColor;
+  padding: 0 5%;
+  display: flex;
+
+  @media (max-width: 1330px){
+    padding: 0;
+  }
+
+  @media (max-width: 1024px) {
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+
+  & > .logoWrapper {
+    width: 25%;
+    height: 100%;
+    @include flex-center;
+    //gap: 5px;
+
+    @media (max-width: 1024px) {
+      width: 50%;
+    }
+
+    @media (max-width: 580px) {
+      width: 80%;
+      justify-content: flex-start;
+    }
+
+    & > h1 {
+      color: #cccccc;
+      margin-top: 5px;
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 30px;
+    }
+
+  }
+
+  & > .menuWrapper {
+    width: 50%;
+    height: 100%;
+
+    @media (max-width: 1200px) {
+      width: 60%;
+    }
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  & > .burgerMenuWrapper {
+    width: 15%;
+    height: 100%;
+    @include flex-center;
+    display: none;
+
+    @media (max-width: 1024px) {
+      display: flex;
+    }
+
+    @media (max-width: 580px) {
+      width: 20%;
+    }
+  }
+
+  & > .SocWrapper {
+    width: 25%;
+    height: 100%;
+    @include flex-center;
+
+    @media (max-width: 1200px) {
+      width: 20%;
+    }
+
+    @media (max-width: 1024px) {
+      width: 30%;
+    }
+
+    @media (max-width: 580px) {
+      display: none;
+    }
+  }
+}
+

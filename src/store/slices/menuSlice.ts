@@ -1,0 +1,33 @@
+import { createSlice } from '@reduxjs/toolkit';
+import type { MenuItemsType } from '../../types/menuType.tsx';
+
+interface MenuState {
+    isOpen: boolean;
+    menuItems: MenuItemsType[];
+}
+
+const initialState: MenuState = {
+    isOpen: false,
+    menuItems: [
+        { id: '1', name: 'Home' },
+        { id: '2', name: 'About' },
+        { id: '3', name: 'Our Team' },
+        { id: '4', name: 'Concerts' },
+        { id: '5', name: 'Gallery' },
+        { id: '6', name: 'About Us' },
+        { id: '7', name: 'Contact' },
+    ],
+};
+
+const menuSlice = createSlice({
+    name: 'menu',
+    initialState,
+    reducers: {
+        toggleMenu: (state) => {
+            state.isOpen = !state.isOpen;
+        },
+    },
+});
+
+export const { toggleMenu } = menuSlice.actions;
+export default menuSlice.reducer;
