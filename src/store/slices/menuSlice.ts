@@ -9,13 +9,13 @@ interface MenuState {
 const initialState: MenuState = {
     isOpen: false,
     menuItems: [
-        { id: '1', name: 'Home' },
-        { id: '2', name: 'About' },
-        { id: '3', name: 'Our Team' },
-        { id: '4', name: 'Concerts' },
-        { id: '5', name: 'Gallery' },
-        { id: '6', name: 'About Us' },
-        { id: '7', name: 'Contact' },
+        { id: '1', name: 'Home', targetId: 'home' },
+        { id: '2', name: 'About', targetId: 'about' },
+        { id: '3', name: 'Our Team', targetId: 'ourTeam' },
+        { id: '4', name: 'Concerts', targetId: 'concerts' },
+        { id: '5', name: 'Gallery', targetId: 'gallery' },
+        { id: '6', name: 'About Us', targetId: 'about-us' },
+        { id: '7', name: 'Contact', targetId: 'contact' },
     ],
 };
 

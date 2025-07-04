@@ -10,7 +10,7 @@ export default function HeroSection() {
     };
     const color = "rgba(255, 136, 0, 1)"
     return (
-        <section className={'heroSection'}>
+        <section className={'heroSection'} id="heroSection">
             <img className={'heroImage'} width={"100%"} height={"100%"} src={heroImg} alt="hero image"/>
             <div className={'globWrapper'}>
                 <div className={'contentWrapper'}>
