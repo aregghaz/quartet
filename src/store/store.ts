@@ -3,6 +3,7 @@ import menuReducer from './slices/menuSlice';
 import socReducer from './slices/socLinksSlice.tsx';
 import buttonReducer from './slices/buttonSlice';
 import mediaReducer from './slices/mediaSlice';
+import aboutReducer from './slices/aboutSlice';
 
 export const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
         soc: socReducer,
         button: buttonReducer,
         media: mediaReducer,
+        about: aboutReducer
     }
 });
 

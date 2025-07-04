@@ -1,9 +1,12 @@
 $globalColor: #1A1A1A;
 $gradient: linear-gradient(135deg, rgba(252, 190, 16, 1) 0%, rgba(255, 136, 0, 1) 100%);
+$gradient200: linear-gradient(135deg, #DBA14D 0%, rgba(0, 0, 0, 0.48) 100%);
 $globTextColor: #fff;
 $textColor200: #CACACA;
+$textColor300: #DBA14D;
 $textColorGold: #FFBE10FF;
 $transparentBgColor: rgba(19, 19, 19, 0.69);
+$buttonColor: #DBA14D;
 
 @mixin flex-center {
   display: flex;
