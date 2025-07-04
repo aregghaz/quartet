@@ -20,7 +20,7 @@ export default function About() {
         infoText3
     } = useSelector((state: RootState) => state.about);
     return (
-        <section className="about">
+        <section className="about" id="about">
             <div className="topContainer">
                 <div className="aboutInfoWrapper">
                     <h3 style={{fontSize: "20px", paddingTop: "20px"}}>{title}</h3>
