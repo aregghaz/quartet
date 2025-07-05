@@ -2,12 +2,9 @@ import './styles/App.scss'
 import Header from "./components/Header.tsx";
 import HeroSection from "./components/HeroSection.tsx";
 import About from "./components/About.tsx";
-
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 import OurTeam from "./components/OurTeam.tsx";
-
-
-
+import RekSection from "./components/RekSection.tsx";
 
 function App() {
     useEffect(() => {
@@ -15,7 +12,7 @@ function App() {
         if (hash) {
             const section = document.getElementById(hash);
             if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
+                section.scrollIntoView({behavior: 'smooth'});
             }
         }
     }, []);
@@ -25,6 +22,7 @@ function App() {
             <Header/>
             <HeroSection/>
             <About/>
+            <RekSection/>
             <OurTeam/>
         </>
     )
