@@ -7,12 +7,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@src" as *;`,
-        includePaths: [path.resolve(__dirname, 'src')],
-        sassOptions: {
-          javascriptEnabled: false,
-        },
-      },
+      //// additionalData: `@import "./src/styles/variables.scss";`,
     },
-  },  assetsInclude: ['**/*.ttf']
+  },  
+  assetsInclude: ['**/*.ttf']
 })
