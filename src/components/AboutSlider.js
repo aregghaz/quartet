@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import AboutSlide1 from '../assets/images/AboutSLide1.png';
-import AboutSlide2 from '../assets/images/AboutSLide2.png';
+import AboutSlide2 from '../assets/images/rekImage.jpg';
 import AboutSlide3 from '../assets/images/AboutSLide3.png';
 import { Autoplay } from 'swiper/modules';
 export default function AboutSlider() {
