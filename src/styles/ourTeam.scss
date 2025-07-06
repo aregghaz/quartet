@@ -1,5 +1,39 @@
+@import "variables";
+
 .ourTeam{
   width: 100%;
-  height: 100vh;
-  border: 1px solid red;
+  height: 70vh;
+  padding: 20px 10%;
+  background-color: $globalColor;
+  display: flex;
+  flex-direction: column;
+
+  .teamHeader{
+    width: 100%;
+    height: 20%;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > h2 {
+      color: $textColor200;
+      font-size: 32px;
+      text-transform: uppercase;
+      font-family: Oswald, sans-serif;
+      font-weight: 500;
+    }
+
+    & > .catalogMenu{
+      width: 60%;
+      height: 50px;
+      border: 1px solid red;
+    }
+  }
+
+  .teamBody{
+    width: 100%;
+    height: 80%;
+    border: 1px solid red;
+  }
 }

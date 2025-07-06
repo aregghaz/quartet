@@ -1,12 +1,5 @@
-import {createSlice, type PayloadAction} from '@reduxjs/toolkit';
-import type { SocItemsType } from '../../types/socItemsType';
-
-interface SocState {
-    items: SocItemsType[];
-    iconColor: string;
-}
-
-const initialState: SocState = {
+import { createSlice } from '@reduxjs/toolkit';
+const initialState = {
     items: [
         { id: '1', url: 'https://www.instagram.com/?flo=true', img: <></> },
         { id: '2', url: 'https://www.facebook.com/', img: <></> },
@@ -14,19 +7,17 @@ const initialState: SocState = {
     ],
     iconColor: '#FFBE10FF',
 };
-
 const socSlice = createSlice({
     name: 'soc',
     initialState,
     reducers: {
-        setIconColor: (state, action: PayloadAction<string>) => {
+        setIconColor: (state, action) => {
             state.iconColor = action.payload;
         },
-        updateItems: (state, action: PayloadAction<SocItemsType[]>) => {
+        updateItems: (state, action) => {
             state.items = action.payload;
         },
     },
 });
-
 export const { setIconColor, updateItems } = socSlice.actions;
 export default socSlice.reducer;

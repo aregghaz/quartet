@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-interface MediaState {
+export interface MediaState {
     isPlaying: boolean;
     currentTime: number;
     mediaSrc: string;

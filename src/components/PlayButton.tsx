@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import '../styles/playButton.scss';
 import { playPause, setCurrentTime, setMediaSrc, toggleVideoOpen } from '../store/slices/mediaSlice';
 import { type RootState } from '../store/store';
-import type {PlayButtonProps} from "../types/playButtonType.ts";
+import type {PlayButtonProps} from "../types/playButtonType";
 
 
 const PlayButton: FC<PlayButtonProps> = ({ onClick, color = '#FF5733', mediaSrc }) => {

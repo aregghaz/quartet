@@ -1,8 +1,8 @@
 import "../styles/heroSection.scss"
 import heroImg from '../assets/images/hero.jpg';
 import ingaImg from '../assets/images/ingaImg.png';
-import Button from "./Button.tsx";
-import PlayButton from "./PlayButton.tsx";
+import Button from "./Button";
+import PlayButton from "./PlayButton";
 
 export default function HeroSection() {
     const handlePlayClick = () => {

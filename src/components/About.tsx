@@ -1,8 +1,8 @@
 import '../styles/About.scss'
-import Button from "./Button.tsx";
+import Button from "./Button";
 import {useSelector} from 'react-redux';
-import {type RootState} from '../store/store.ts';
-import AboutSlider from "./AboutSlider.tsx";
+import {type RootState} from '../store/store';
+import AboutSlider from "./AboutSlider";
 
 
 export default function About() {
