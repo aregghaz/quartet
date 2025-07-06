@@ -1,20 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es2020",                             // modern JS target
-    "lib": ["es2020", "dom"],                       // bring in Set, WeakMap, Symbol, etc.
+    "target": "es2020",
+    "lib": ["es2020","dom"],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "allowImportingTsExtensions": true,             // <-- for '.tsx' imports
-    "skipLibCheck": true,                           // ignore type errors in node_modules
-    "typeRoots": ["./node_modules/@types", "./src/types"]
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types","./src/types"]
   },
   "include": [
     "src/**/*",
     "src/types/**/*.d.ts"
   ],
++ "exclude": [
++   "dist",
++   "node_modules"
++ ],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    { "path": "./tsconfig.app.json" }
+    // …remove or fix the node one if you’re not actually building “scripts/”
   ]
 }
