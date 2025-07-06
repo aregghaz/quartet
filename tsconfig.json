@@ -12,10 +12,10 @@
     "src/**/*",
     "src/types/**/*.d.ts"
   ],
-+ "exclude": [
-+   "dist",
-+   "node_modules"
-+ ],
+ "exclude": [
+   "dist",
+   "node_modules"
+],
   "references": [
     { "path": "./tsconfig.app.json" }
     // …remove or fix the node one if you’re not actually building “scripts/”
