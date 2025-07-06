@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import type { MenuItemsType } from '../../types/menuType.tsx';
+import type { MenuItemsType } from '../../types/menuType';
 
-interface MenuState {
+export interface MenuState {
     isOpen: boolean;
     menuItems: MenuItemsType[];
 }

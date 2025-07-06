@@ -1,12 +1,12 @@
-import {InstagramIcon} from "../icons/instagramIcon.tsx";
+import {InstagramIcon} from "../icons/instagramIcon";
 import "../styles/SocWrapper.scss"
-import {FacebookIcon} from "../icons/facebookIcon.tsx";
-import {YoutubeIcon} from "../icons/youtubeIcon.tsx";
+import {FacebookIcon} from "../icons/facebookIcon";
+import {YoutubeIcon} from "../icons/youtubeIcon";
 import type {SocItemsType} from "../types/socItemsType.ts";
 import {useDispatch, useSelector} from "react-redux";
 import type {RootState} from "../store/store.ts";
 import {useEffect} from "react";
-import {updateItems} from "../store/slices/socLinksSlice.tsx";
+import {updateItems} from "../store/slices/socLinksSlice";
 
 
 export default function SocLinks() {

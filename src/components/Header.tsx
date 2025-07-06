@@ -1,8 +1,8 @@
 import '../styles/Header.scss'
-import LogoIcon from "../icons/logoIcon.tsx";
-import Menu from "./Menu.tsx";
-import SocLinks from "./SocLinks.tsx";
-import MenuBurger from "./MenuBurger.tsx";
+import LogoIcon from "../icons/logoIcon";
+import Menu from "./Menu";
+import SocLinks from "./SocLinks";
+import MenuBurger from "./MenuBurger";
 
 export default function Header() {
     return (

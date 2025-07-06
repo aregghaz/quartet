@@ -2,8 +2,8 @@ import '../styles/menuBurger.scss';
 import {useDispatch, useSelector} from 'react-redux';
 import {toggleMenu} from '../store/slices/menuSlice';
 import type {RootState} from '../store/store';
-import Menu from "./Menu.tsx";
-import SocLinks from "./SocLinks.tsx";
+import Menu from "./Menu";
+import SocLinks from "./SocLinks";
 
 export default function MenuBurger() {
     const dispatch = useDispatch();
