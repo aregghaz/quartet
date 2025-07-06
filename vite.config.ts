@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-import path from 'node:path';
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
@@ -7,8 +6,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-      //// additionalData: `@import "./src/styles/variables.scss";`,
+        // additionalData: `@import "./src/styles/variables.scss";`,
+      },
     },
-  },  
+  },
   assetsInclude: ['**/*.ttf']
 })
