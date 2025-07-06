@@ -1,20 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-interface AboutState {
-    title: string;
-    subtitle: string;
-    paragraphs: string[];
-    finalNote: string;
-    buttonText: string;
-    infoNumber1: string;
-    infoNumber2: string;
-    infoNumber3: string;
-    infoText1: string;
-    infoText2: string;
-    infoText3: string;
-}
-
-const initialState: AboutState = {
+const initialState = {
     title: "AM Music Lab",
     subtitle: "it's a sonic laboratory where tradition meets experimentation",
     paragraphs: [
@@ -31,14 +16,9 @@ const initialState: AboutState = {
     infoText2: "Successful shows across the country",
     infoText3: "Won multiple global music awards",
 };
-
 const aboutSlice = createSlice({
     name: 'about',
     initialState,
-    reducers: {
-
-    }
+    reducers: {}
 });
-
 export default aboutSlice.reducer;
-export type { AboutState };
