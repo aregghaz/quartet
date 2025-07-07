@@ -1,0 +1,88 @@
+@import "variables";
+
+.teamItems {
+  width: 100%;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  color: #fff;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.teamItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #222222;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-top: 0.2px solid rgba(198, 198, 198, 0.49);
+  max-width: 400px;
+  width: 100%;
+  height: 500px;
+  cursor: pointer;
+
+  &:hover .itemImage > img{
+    transform: rotate(5deg) scale(1.1);
+  }
+
+  .itemImage {
+    width: 100%;
+    aspect-ratio: 1 / 5;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+      transition: .5s;
+
+    }
+  }
+
+
+.itemDescription {
+  width: 100%;
+  height: 180px;
+  //border: 1px solid red;
+
+  h2 {
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+    color: #fff;
+    font-family: Oswald, sans-serif;
+    font-weight: 500;
+  }
+
+  p {
+    margin: 0;
+    color: $textColor200;
+    font-size: 0.8rem;
+    font-family: Roboto, sans-serif;
+
+  }
+}
+
+.itemStatus {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.9rem;
+  color: $textColor200;
+
+
+
+  .author,
+  .date {
+    color: $textColor200;
+    font-family: Roboto, sans-serif;
+  }
+}
+
+}
