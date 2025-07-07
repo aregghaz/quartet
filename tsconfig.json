@@ -3,7 +3,7 @@
     "jsx": "react-jsx",
     "target": "ES6",
     "lib": ["es2020","dom"],
-    "moduleResolution": "node",
+    "module": "commonjs",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
