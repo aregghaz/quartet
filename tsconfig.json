@@ -1,24 +1,59 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "target": "ES6",
-    "lib": ["es2020","dom"],
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "allowJs": false,
     "skipLibCheck": true,
-    "typeRoots": ["./node_modules/@types","./src/types"]
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "noImplicitAny": false,
+    "jsx": "react-jsx",
+    "noUnusedLocals": false,
+    "paths": {
+      "@src/*": [
+        "./src/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@images/*": [
+        "./src/images/*"
+      ],
+      "@store/*": [
+        "./src/store/*"
+      ],
+      "@svg/*": [
+        "./src/icons/*"
+      ]
+    }
   },
-  "include": [
-    "src/**/*",
-    "src/types/**/*.d.ts"
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
   ],
- "exclude": [
-   "dist",
-   "node_modules"
-],
+  "include": [
+    "src"
+  ],
   "references": [
-    { "path": "./tsconfig.app.json" }
-    // …remove or fix the node one if you’re not actually building “scripts/”
+    {
+      "path": "./tsconfig.node.json"
+    }
   ]
 }
