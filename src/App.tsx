@@ -1,10 +1,10 @@
-import './styles/App.scss'
-import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import About from "./components/About";
+import '@styles/App.scss'
+import Header from "@components/Header";
+import HeroSection from "@components/HeroSection";
+import About from "@components/About";
 import {useEffect} from 'react';
-import OurTeam from "./components/OurTeam";
-import RekSection from "./components/RekSection";
+import OurTeam from "@components/OurTeam";
+import RekSection from "@components/RekSection";
 
 function App() {
     useEffect(() => {

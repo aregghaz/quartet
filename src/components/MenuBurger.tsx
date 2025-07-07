@@ -1,7 +1,7 @@
-import '../styles/menuBurger.scss';
+import '@styles/menuBurger.scss';
 import {useDispatch, useSelector} from 'react-redux';
-import {toggleMenu} from '../store/slices/menuSlice';
-import type {RootState} from '../store/store';
+import {toggleMenu} from '@store/slices/menuSlice';
+import type {RootState} from '@store/store';
 import Menu from "./Menu";
 import SocLinks from "./SocLinks";
 

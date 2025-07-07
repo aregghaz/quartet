@@ -41,7 +41,8 @@ export default defineConfig({
             '@images': path.resolve(__dirname, './src/assets/images/'),
             '@store': path.resolve(__dirname, './src/store/'),
             '@svg': path.resolve(__dirname, './src/icons/'),
-            '@type': path.resolve(__dirname, './src/types/'),
+            '@types': path.resolve(__dirname, './types/'),
+            '@styles': path.resolve(__dirname, './src/styles'),
         },
     },
 });

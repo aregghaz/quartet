@@ -1,4 +1,4 @@
-import '../styles/rekSection.scss'
+import '@styles/rekSection.scss'
 
 export default function RekSection() {
     return (

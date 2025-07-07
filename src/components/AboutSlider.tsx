@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import AboutSlide1 from '../assets/images/AboutSLide1.png';
-import AboutSlide2 from '../assets/images/rekImage.jpg';
+import AboutSlide1 from '@images/AboutSLide1.png';
+import AboutSlide2 from '@images/rekImage.jpg';
 import AboutSlide3 from '@images/AboutSlide3.png';
 import { Autoplay } from 'swiper/modules';
 

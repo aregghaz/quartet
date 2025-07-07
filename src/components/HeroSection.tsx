@@ -1,6 +1,6 @@
-import "../styles/heroSection.scss"
-import heroImg from '../assets/images/hero.jpg';
-import ingaImg from '../assets/images/ingaImg.png';
+import "@styles/heroSection.scss"
+import heroImg from '@images/hero.jpg';
+import ingaImg from '@images/ingaImg.png';
 import Button from "./Button";
 import PlayButton from "./PlayButton";
 

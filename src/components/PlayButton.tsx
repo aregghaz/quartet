@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import { useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import '../styles/playButton.scss';
-import { playPause, setCurrentTime, setMediaSrc, toggleVideoOpen } from '../store/slices/mediaSlice';
-import { type RootState } from '../store/store';
+import '@styles/playButton.scss';
+import { playPause, setCurrentTime, setMediaSrc, toggleVideoOpen } from '@store/slices/mediaSlice';
+import { type RootState } from '@store/store';
 import type {PlayButtonProps} from "../types/playButtonType";
 
 

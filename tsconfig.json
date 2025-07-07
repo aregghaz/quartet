@@ -39,6 +39,12 @@
       ],
       "@svg/*": [
         "./src/icons/*"
+      ],
+      "@types/*": [
+        "./types/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
       ]
     }
   },
