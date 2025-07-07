@@ -4,6 +4,8 @@ import buttonReducer from "./slices/buttonSlice"
 import mediaReducer from "./slices/mediaSlice"
 import menuReducer from "./slices/menuSlice"
 import socLinksReducer from "./slices/socLinksSlice"
+import teamMenuReducer from "./slices/teamMenuSlice";
+import teamItemsReducer from "./slices/teamItemSlice"
 
 export const store = configureStore({
     reducer: {
@@ -11,7 +13,9 @@ export const store = configureStore({
         button: buttonReducer,
         media: mediaReducer,
         menu: menuReducer,
-        soc: socLinksReducer
+        soc: socLinksReducer,
+        teamMenu: teamMenuReducer,
+        teamItems: teamItemsReducer,
     }
 })
 
