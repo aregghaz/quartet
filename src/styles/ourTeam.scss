@@ -2,7 +2,7 @@
 
 .ourTeam{
   width: 100%;
-  height: 100vh;
+  height: auto;
   padding: 20px 10%;
   background-color: $globalColor;
   display: flex;
@@ -29,11 +29,14 @@
     }
 
     & > h2 {
-      color: $textColor200;
       font-size: 32px;
       text-transform: uppercase;
       font-family: Oswald, sans-serif;
       font-weight: 500;
+      color: transparent;
+      background-image: $gradient300;
+      background-clip: text;
+      -webkit-background-clip: text;
 
       @media (max-width: 1110px) {
         font-size: 26px;
@@ -77,8 +80,12 @@
           }
 
           &:hover{
-            color: $textColorGold;
+            color: $buttonColor;
           }
+        }
+        & > .active {
+          color: $buttonColor;
+
         }
       }
 
@@ -87,11 +94,7 @@
 
   .teamBody{
     width: 100%;
-    height: 93%;
-    display: flex;
-    //align-items: flex-start;
-    gap: 30px;
-    flex-wrap: wrap;
+    max-height: 1040px;
     overflow-y: scroll;
   }
 }

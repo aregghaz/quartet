@@ -6,10 +6,18 @@
   background-color: #1a1a1a;
   color: #fff;
   min-height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); // 👈 3 items per row
   gap: 1rem;
+  justify-content: center;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr); // 2 per row on tablets
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr; // 1 per row on mobile
+  }
 }
 
 .teamItem {
