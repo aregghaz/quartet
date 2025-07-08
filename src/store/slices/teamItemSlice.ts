@@ -27,7 +27,7 @@ const initialState: TeamItemsState = {
         {
             "id": "1",
             "name": "Bruno Mars",
-            "description": "Bruno Mars, is an American singer, songwriter, musician, and record producer.",
+            "description": "Bruno Mars, is an American singer, songwriter, musician,.",
             "imageUrl": brunoItem,
             "author": "Admin",
             "date": "2025-07-01",
@@ -36,7 +36,7 @@ const initialState: TeamItemsState = {
         {
             "id": "2",
             "name": "Dua Lipa",
-            "description": "Renowned rapper and lyricist",
+            "description": "Lipa worked as a model before venturing into music and signing",
             "imageUrl": duaLipaItem,
             "author": "Admin",
             "date": "2025-07-02",
