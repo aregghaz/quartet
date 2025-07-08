@@ -15,7 +15,7 @@ export default function OurTeam() {
         : teamItems.filter(item => item.teamId === selectedTeamId);
 
     return (
-        <section className="ourTeam" id="ourTeam">
+        <section className="ourTeam" id="Ensembles">
             <div className="teamHeader">
                 <h2>Ensembles and Lineups</h2>
                 <div className="catalogMenu">
