@@ -10,8 +10,8 @@ const initialState: MenuState = {
     isOpen: false,
     menuItems: [
         { id: '1', name: 'Home', targetId: 'home' },
-        { id: '2', name: 'About', targetId: 'about' },
         { id: '3', name: 'Our Team', targetId: 'ourTeam' },
+        { id: '2', name: 'About', targetId: 'about' },
         { id: '4', name: 'Concerts', targetId: 'concerts' },
         { id: '5', name: 'Gallery', targetId: 'gallery' },
         { id: '6', name: 'About Us', targetId: 'about-us' },

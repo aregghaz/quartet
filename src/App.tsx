@@ -21,9 +21,10 @@ function App() {
         <>
             <Header/>
             <HeroSection/>
-            <About/>
-            <RekSection/>
             <OurTeam/>
+            <RekSection/>
+            <About/>
+
         </>
     )
 }
