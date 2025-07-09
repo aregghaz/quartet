@@ -2,10 +2,10 @@ import '@styles/About.scss'
 import Button from "./Button";
 import {useSelector} from 'react-redux';
 import {type RootState} from '@store/store';
-import AboutSlider from "./AboutSlider";
+import ContactSlider from "./ContactSlider";
 
 
-export default function About() {
+export default function Contact() {
     const {
         title,
         subtitle,
@@ -20,7 +20,7 @@ export default function About() {
         infoText3
     } = useSelector((state: RootState) => state.about);
     return (
-        <section className="about" id="about">
+        <section className="about" id="contact">
             <div className="topContainer">
                 <div className="aboutInfoWrapper">
                     <h3 style={{fontSize: "20px", paddingTop: "20px"}}>{title}</h3>
@@ -36,7 +36,7 @@ export default function About() {
                     }}/>
                 </div>
                 <div className="aboutSliderWrapper">
-                    <AboutSlider/>
+                    <ContactSlider/>
                 </div>
             </div>
             <div className="lastInfo">

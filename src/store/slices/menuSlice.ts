@@ -10,12 +10,12 @@ const initialState: MenuState = {
     isOpen: false,
     menuItems: [
         { id: '1', name: 'Home', targetId: 'home' },
-        { id: '3', name: 'Ensembles', targetId: 'Ensembles' },
-        { id: '2', name: 'About', targetId: 'about' },
-        { id: '4', name: 'Services', targetId: 'Services' },
-        { id: '5', name: 'Guest Artists', targetId: 'Guest' },
-        { id: '6', name: 'Portfolio', targetId: 'Portfolio' },
-        { id: '7', name: 'Contact', targetId: 'contact' },
+        { id: '2', name: 'Ensembles', targetId: 'Ensembles' },
+        { id: '3', name: 'Services', targetId: 'Services' },
+        { id: '4', name: 'Guest Artists', targetId: 'Guest' },
+        { id: '5', name: 'Portfolio', targetId: 'Portfolio' },
+        { id: '6', name: 'Contact', targetId: 'contact' },
+
     ],
 };
 
