@@ -9,6 +9,7 @@ import teamItemsReducer from "./slices/teamItemSlice"
 import modalReducer from "./slices/modalSlice"
 import personaReducer from './slices/personaSlice'
 import servicesReducer from "./slices/servicesSlice"
+import guestArtistsReducer from "./slices/guestArtistsSlice"
 
 export const store = configureStore({
     reducer: {
@@ -22,6 +23,7 @@ export const store = configureStore({
         modal: modalReducer,
         persona: personaReducer,
         services: servicesReducer,
+        guestArtists: guestArtistsReducer,
     }
 })
 

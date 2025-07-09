@@ -7,7 +7,7 @@ export default function Services() {
     const items = useSelector((state: RootState) => state.services.items);
 
     return (
-        <section className="services">
+        <section className="services" id="Services">
             <div className={'globWrapper'}>
                 <div className="topContent">
                     <div className="leftContent">

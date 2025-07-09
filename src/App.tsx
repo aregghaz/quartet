@@ -6,6 +6,7 @@ import {useEffect} from 'react';
 import OurTeam from "@components/OurTeam";
 import RekSection from "@components/RekSection";
 import Services from "@components/Services";
+import GuestArtists from "@components/GuestArtists";
 
 function App() {
     useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
             <OurTeam/>
             <RekSection/>
             <Services />
+            <GuestArtists />
             <Contact/>
         </>
     )
