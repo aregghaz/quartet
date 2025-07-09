@@ -8,7 +8,7 @@ import { Autoplay } from 'swiper/modules';
 
 
 
-export default function AboutSlider() {
+export default function ContactSlider() {
     return (
         <div className="aboutSliderWrapper">
             <Swiper
