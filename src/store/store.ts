@@ -8,6 +8,7 @@ import teamMenuReducer from "./slices/teamMenuSlice"
 import teamItemsReducer from "./slices/teamItemSlice"
 import modalReducer from "./slices/modalSlice"
 import personaReducer from './slices/personaSlice'
+import servicesReducer from "./slices/servicesSlice"
 
 export const store = configureStore({
     reducer: {
@@ -19,7 +20,8 @@ export const store = configureStore({
         teamMenu: teamMenuReducer,
         teamItems: teamItemsReducer,
         modal: modalReducer,
-        persona: personaReducer
+        persona: personaReducer,
+        services: servicesReducer,
     }
 })
 
