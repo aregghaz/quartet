@@ -1,10 +1,22 @@
-@import "variables";
+@use "variables" as *;
 
 .guest {
   width: 100%;
   height: auto;
   background-color: $globalColor;
   padding: 50px 10%;
+
+  @media (max-width: 1500px) {
+    padding: 50px 5%;
+  }
+
+  @media (max-width: 1250px) {
+    padding: 50px 0%;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 20px 0 0 0;
+  }
 
   & > .topTitle {
     width: 100%;
@@ -18,6 +30,11 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 7px;
+
+      @media (max-width: 422px) {
+        font-size: 34px;
+      }
+
     }
   }
 
@@ -49,6 +66,16 @@
       transition: transform 0.4s ease;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 
+      @media (max-width: 1250px) {
+        width: 300px;
+        height: 450px;
+      }
+
+      @media (max-width: 422px) {
+        width: 250px;
+        height: 350px;
+      }
+
       .leftLabel {
         width: 80px;
         height: 150px;
@@ -63,12 +90,22 @@
         transform: rotate(180deg);
         font-family: 'Oswald', sans-serif;
 
+        @media (max-width: 980px) {
+          width: 60px;
+          height: 120px;
+          padding: 1rem 1rem;
+        }
+
 
         p {
           font-size: 1.1rem;
           color: #ffc857;
           font-weight: bold;
           margin: 0;
+
+          @media (max-width: 980px) {
+            font-size: 0.8rem;
+          }
 
         }
 
