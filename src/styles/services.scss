@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables" as *;
 
 .services {
   width: 100%;
@@ -56,6 +56,10 @@
           font-family: Oswald, sans-serif;
           color: $buttonColor;
           font-style: italic;
+
+          @media (max-width: 720px) {
+            text-align: center;
+          }
         }
 
         & > h2 {
@@ -63,6 +67,10 @@
           font-size: 28px;
           color: $textColor200;
           text-transform: uppercase;
+
+          @media (max-width: 720px) {
+            text-align: center;
+          }
 
           & > br {
             @media (max-width: 1110px) {

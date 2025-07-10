@@ -2,13 +2,30 @@ import '@styles/guestArtists.scss'
 
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
-import {Navigation} from "swiper/modules";
+import { EffectFade, Navigation} from "swiper/modules";
 import {useSelector} from 'react-redux';
 import {RootState} from '@store/store';
+import {useEffect, useState} from "react";
 
 
 export default function GuestArtists() {
     const guestArtists = useSelector((state: RootState) => state.guestArtists.artists);
+    const [effect, setEffect] = useState<'coverflow' | 'fade'>('coverflow');
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 820) {
+                setEffect('fade');
+            } else {
+                setEffect('coverflow');
+            }
+        };
+
+        handleResize(); // initial run
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <section className="guest" id={'Guest'}>
@@ -17,10 +34,10 @@ export default function GuestArtists() {
             </div>
             <div className="globContainer">
                 <Swiper
-                    effect="coverflow"
+                    effect={effect}
                     grabCursor={true}
                     centeredSlides={true}
-                    slidesPerView={3}
+                    slidesPerView={window.innerWidth <= 820 ? 1 : 3}
                     navigation
                     loop={true}
                     coverflowEffect={{
@@ -30,7 +47,8 @@ export default function GuestArtists() {
                         modifier: 2,
                         slideShadows: false,
                     }}
-                    modules={[Navigation]}
+                    fadeEffect={{ crossFade: true }}
+                    modules={[Navigation,  EffectFade]}
                     className="guestSwiper"
                 >
                     {guestArtists.map((artist) => (
