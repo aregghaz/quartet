@@ -1,17 +1,20 @@
 import '@styles/guestArtists.scss'
-
+import { useDispatch } from 'react-redux';
+import { openGuestModal } from '@store/slices/guestArtistsSlice';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import { EffectFade, Navigation} from "swiper/modules";
 import {useSelector} from 'react-redux';
 import {RootState} from '@store/store';
 import {useEffect, useState} from "react";
+import GuestModal from "@components/GuestModal";
 
 
 export default function GuestArtists() {
     const guestArtists = useSelector((state: RootState) => state.guestArtists.artists);
     const [effect, setEffect] = useState<'coverflow' | 'fade'>('coverflow');
 
+    const dispatch = useDispatch();
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth <= 820) {
@@ -21,7 +24,7 @@ export default function GuestArtists() {
             }
         };
 
-        handleResize(); // initial run
+        handleResize();
         window.addEventListener('resize', handleResize);
 
         return () => window.removeEventListener('resize', handleResize);
@@ -53,7 +56,7 @@ export default function GuestArtists() {
                 >
                     {guestArtists.map((artist) => (
                         <SwiperSlide key={artist.id} className="guestSlide">
-                            <div className="guestCard" style={{backgroundImage: `url(${artist.imageUrl})`}}>
+                            <div className="guestCard" onClick={() => dispatch(openGuestModal(artist))} style={{backgroundImage: `url(${artist.imageUrl})`}}>
                                 <div className="leftLabel">
                                     <p className="artistName">{artist.name}</p>
                                     <span className="artistRole">{artist.role}</span>
@@ -62,7 +65,7 @@ export default function GuestArtists() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-
+                <GuestModal />
             </div>
         </section>
     )
