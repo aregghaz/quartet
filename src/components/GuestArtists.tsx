@@ -38,7 +38,7 @@ export default function GuestArtists() {
             <div className="globContainer">
                 <Swiper
                     effect={effect}
-                    grabCursor={true}
+                    grabCursor={false}
                     centeredSlides={true}
                     slidesPerView={window.innerWidth <= 820 ? 1 : 3}
                     navigation

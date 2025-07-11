@@ -1,12 +1,13 @@
 import '@styles/App.scss'
 import Header from "@components/Header";
-import HeroSection from "@components/HeroSection";
+// import HeroSection from "@components/HeroSection";
 import Contact from "@components/Contact";
 import {useEffect} from 'react';
 import OurTeam from "@components/OurTeam";
 import RekSection from "@components/RekSection";
 import Services from "@components/Services";
 import GuestArtists from "@components/GuestArtists";
+import Portfolio from "@components/Portfolio";
 
 function App() {
     useEffect(() => {
@@ -22,7 +23,8 @@ function App() {
     return (
         <>
             <Header/>
-            <HeroSection/>
+            <Portfolio />
+            {/*<HeroSection/>*/}
             <OurTeam/>
             <RekSection/>
             <Services />
