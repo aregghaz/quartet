@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import '@styles/portfolio.scss';
 
 const initialItems = [...Array(10)].map((_, i) => ({
@@ -8,23 +8,62 @@ const initialItems = [...Array(10)].map((_, i) => ({
 
 export default function Portfolio() {
     const [items, setItems] = useState(initialItems);
-    const [slideClass, setSlideClass] = useState<'slide-left' | 'slide-right' | ''>('');
+    const [offset, setOffset] = useState(-1);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const trackRef = useRef<HTMLDivElement>(null);
 
-    const handlePrev = () => {
-        setSlideClass('slide-left');
-        setTimeout(() => {
-            setItems((prev) => [prev[prev.length - 1], ...prev.slice(0, prev.length - 1)]);
-            setSlideClass('');
-        }, 500);
-    };
+    const extendedItems = [
+        items[items.length - 1],
+        ...items.slice(0, 4),
+        items[4],
+    ];
 
     const handleNext = () => {
-        setSlideClass('slide-right');
-        setTimeout(() => {
-            setItems((prev) => [...prev.slice(1), prev[0]]);
-            setSlideClass('');
-        }, 500);
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setOffset((prev) => prev - 1);
     };
+
+    const handlePrev = () => {
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setOffset((prev) => prev + 1);
+    };
+
+    const onTransitionEnd = () => {
+        let newItems = [...items];
+        let newOffset = offset;
+
+        if (offset === -2) {
+            newItems = [...items.slice(1), items[0]];
+            newOffset = -1;
+        } else if (offset === 0) {
+            newItems = [items[items.length - 1], ...items.slice(0, items.length - 1)];
+            newOffset = -1;
+        } else {
+            setIsTransitioning(false);
+            return;
+        }
+
+        setItems(newItems);
+        setOffset(newOffset);
+
+        if (trackRef.current) {
+            trackRef.current.style.transition = 'none';
+            trackRef.current.style.transform = `translateX(${newOffset * 25}%)`;
+
+            // Двойной requestAnimationFrame для надёжного восстановления
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    if (trackRef.current) {
+                        trackRef.current.style.transition = 'transform 0.5s ease';
+                        setIsTransitioning(false);
+                    }
+                });
+            });
+        }
+    };
+
 
     return (
         <section className="portfolioWrapper">
@@ -32,12 +71,22 @@ export default function Portfolio() {
                 &lt;
             </button>
 
-            <div className={`portfolio ${slideClass}`}>
-                {items.slice(0, 4).map((item) => (
-                    <div className="portfolioItem" key={item.id}>
-                        {item.name}
-                    </div>
-                ))}
+            <div className="portfolio">
+                <div
+                    ref={trackRef}
+                    className="portfolioTrack"
+                    style={{
+                        transform: `translateX(${offset * 25}%)`,
+                        transition: isTransitioning ? 'transform 0.5s ease' : 'none',
+                    }}
+                    onTransitionEnd={onTransitionEnd}
+                >
+                    {extendedItems.map((item, i) => (
+                        <div className="portfolioItem" key={`${item.id}-${i}`}>
+                            {/*{item.name}*/}
+                        </div>
+                    ))}
+                </div>
             </div>
 
             <button className="arrow right" onClick={handleNext}>
