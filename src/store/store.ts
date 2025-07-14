@@ -10,6 +10,7 @@ import modalReducer from "./slices/modalSlice"
 import personaReducer from './slices/personaSlice'
 import servicesReducer from "./slices/servicesSlice"
 import guestArtistsReducer from "./slices/guestArtistsSlice"
+import portfolioReducer from "./slices/portfolioSlice"
 
 export const store = configureStore({
     reducer: {
@@ -24,6 +25,7 @@ export const store = configureStore({
         persona: personaReducer,
         services: servicesReducer,
         guestArtists: guestArtistsReducer,
+        portfolio: portfolioReducer,
     }
 })
 

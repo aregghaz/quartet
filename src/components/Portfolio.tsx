@@ -1,13 +1,17 @@
-import { useState, useRef } from 'react';
+import {useState, useRef} from 'react';
 import '@styles/portfolio.scss';
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "@store/store";
+import {moveNext, movePrev} from "@store/slices/portfolioSlice";
+import ArrowRight from "@svg/arrowRight";
+import ArrowLeft from "@svg/leftArrow";
+import {Link} from "react-router-dom";
 
-const initialItems = [...Array(10)].map((_, i) => ({
-    id: i,
-    name: `Item ${i + 1}`,
-}));
 
 export default function Portfolio() {
-    const [items, setItems] = useState(initialItems);
+    const items = useSelector((state: RootState) => state.portfolio.items);
+    const dispatch = useDispatch();
+
     const [offset, setOffset] = useState(-1);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const trackRef = useRef<HTMLDivElement>(null);
@@ -31,28 +35,25 @@ export default function Portfolio() {
     };
 
     const onTransitionEnd = () => {
-        let newItems = [...items];
         let newOffset = offset;
 
         if (offset === -2) {
-            newItems = [...items.slice(1), items[0]];
+            dispatch(moveNext());
             newOffset = -1;
         } else if (offset === 0) {
-            newItems = [items[items.length - 1], ...items.slice(0, items.length - 1)];
+            dispatch(movePrev());
             newOffset = -1;
         } else {
             setIsTransitioning(false);
             return;
         }
 
-        setItems(newItems);
         setOffset(newOffset);
 
         if (trackRef.current) {
             trackRef.current.style.transition = 'none';
             trackRef.current.style.transform = `translateX(${newOffset * 25}%)`;
 
-            // Двойной requestAnimationFrame для надёжного восстановления
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
                     if (trackRef.current) {
@@ -66,9 +67,9 @@ export default function Portfolio() {
 
 
     return (
-        <section className="portfolioWrapper">
+        <section className="portfolioWrapper" id="portfolio">
             <button className="arrow left" onClick={handlePrev}>
-                &lt;
+                <ArrowLeft width={30} height={30}/>
             </button>
 
             <div className="portfolio">
@@ -82,15 +83,31 @@ export default function Portfolio() {
                     onTransitionEnd={onTransitionEnd}
                 >
                     {extendedItems.map((item, i) => (
-                        <div className="portfolioItem" key={`${item.id}-${i}`}>
-                            {/*{item.name}*/}
-                        </div>
+                        <Link
+                            to={`/artists/${item.id}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="portfolioItem"
+                            key={`${item.id}-${i}`}
+                            style={{
+                                backgroundImage: `url(${item.img})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                cursor: 'pointer',
+                            }}>
+                            <div className="itemsWrapper">
+                                <div className="bottomInfoWrapper">
+                                    <h2>{item.name}</h2>
+                                    <ArrowRight width={30} height={30}/>
+                                </div>
+                            </div>
+                        </Link>
                     ))}
                 </div>
             </div>
 
             <button className="arrow right" onClick={handleNext}>
-                &gt;
+                <ArrowRight width={30} height={30}/>
             </button>
         </section>
     );
