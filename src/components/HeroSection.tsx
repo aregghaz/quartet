@@ -1,13 +1,13 @@
 import "@styles/heroSection.scss"
 import heroImg from '@images/hero.jpg';
-import ingaImg from '@images/ingaImg.png';
+// import ingaImg from '@images/ingaImg.png';
 import Button from "./Button";
-import PlayButton from "./PlayButton";
+// import PlayButton from "./PlayButton";
 
 export default function HeroSection() {
-    const handlePlayClick = () => {
-        alert('Play button clicked!');
-    };
+    // const handlePlayClick = () => {
+    //     alert('Play button clicked!');
+    // };
     const color = "rgba(255, 136, 0, 1)"
     return (
         <section className={'heroSection'} id="heroSection">
@@ -49,24 +49,24 @@ export default function HeroSection() {
                         />
                     </div>
                 </div>
-                <div className={'rekWrapper'}>
-                    <div className={'playContainer'}>
-                        <div className={'imgContainer'}>
-                            <img className={'heroImage'} width={"100%"} height={"100%"} src={ingaImg} alt="hero image"/>
-                        </div>
-                        <div className={'contentContainer'}>
-                            <div className={'infoContainer'}>
-                                <div className={'topContainer'}>
-                                    <p className={'singerName'}>Inga Arshakyans - Aprelu April</p>
-                                    <p className={'authorName'}>Lyrics by Avet Barseghyan</p>
-                                </div>
-                                <PlayButton mediaSrc={'../video/heroVideo.mp4'} onClick={handlePlayClick} color={"#FFBE10FF"} size={60}  />
-                            </div>
-                            <hr />
-                            <p className={'views'}>6 631 636 Views</p>
-                        </div>
-                    </div>
-                </div>
+                {/*<div className={'rekWrapper'}>*/}
+                {/*    <div className={'playContainer'}>*/}
+                {/*        <div className={'imgContainer'}>*/}
+                {/*            <img className={'heroImage'} width={"100%"} height={"100%"} src={ingaImg} alt="hero image"/>*/}
+                {/*        </div>*/}
+                {/*        <div className={'contentContainer'}>*/}
+                {/*            <div className={'infoContainer'}>*/}
+                {/*                <div className={'topContainer'}>*/}
+                {/*                    <p className={'singerName'}>Inga Arshakyans - Aprelu April</p>*/}
+                {/*                    <p className={'authorName'}>Lyrics by Avet Barseghyan</p>*/}
+                {/*                </div>*/}
+                {/*                <PlayButton mediaSrc={'../video/heroVideo.mp4'} onClick={handlePlayClick} color={"#FFBE10FF"} size={60}  />*/}
+                {/*            </div>*/}
+                {/*            <hr />*/}
+                {/*            <p className={'views'}>6 631 636 Views</p>*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
             </div>
         </section>
     )
