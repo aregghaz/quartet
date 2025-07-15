@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables" as *;
 
 .portfolioWrapper {
   position: relative;
@@ -41,6 +41,18 @@
 .portfolioTrack {
   display: flex;
   width: calc(4 * 25%); // 6 слайдов
+
+  @media (max-width: 1200px) {
+    width: calc(5.5 * 25%);
+  }
+
+  @media (max-width: 900px) {
+    width: calc(8 * 25%);
+  }
+
+  @media (max-width: 620px) {
+    width: calc(4 * 100%);
+  }
 }
 
 .portfolioItem {
@@ -55,6 +67,10 @@
 
   &:hover {
     flex-basis: 33%;
+
+    @media (max-width: 1200px) {
+      flex-basis: 25% !important;
+    }
   }
 }
 
@@ -88,6 +104,10 @@
 
   &:hover {
     background-color: transparent;
+
+    @media (max-width: 1200px) {
+      background-color: $transparentBgColor300;
+    }
   }
 
   &:hover .bottomInfoWrapper {
