@@ -115,7 +115,7 @@ const initialState: PortfolioState = {
             img: sabrina,
             url: '/artists/sabrina-carpenter',
             bio: 'Sabrina Annlynn Carpenter (born May 11, 1999) is an American singer and actress known for her pop music and television roles.',
-            gallery: [sabrina1, sabrina2, sabrina3, sabrina4, sabrina5, sabrina6, medison, maneskin, jensen, victoria1, victoria2, victoria3, medison1, medison2, medison3, medison4, medison5, medison6,sabrina1, sabrina2, sabrina3, sabrina4, sabrina5, sabrina6, medison, maneskin, jensen, victoria1, victoria2, victoria3, medison1, medison2, medison3, medison4, medison5, medison6],
+            gallery: [sabrina1, sabrina2, sabrina3, sabrina4, sabrina5, sabrina6, medison, maneskin, jensen, victoria1, victoria2, victoria3, medison1, medison2, medison3, medison4, medison5, medison6,sabrina1, sabrina2, sabrina3, sabrina4, sabrina5, sabrina6, medison, maneskin, jensen, victoria1, victoria2, victoria3, medison1, medison2, medison3, medison4, medison5, medison6, sabrina5, sabrina6, medison, maneskin, jensen, victoria1, victoria2, victoria3, medison1, medison2, medison3, medison4, medison5, medison6,jensen, victoria1, victoria2, victoria3, medison1, medison2, medison3, medison4, medison5, medison6, sabrina5, sabrina6, medison, maneskin, jensen, victoria1, victoria2, victoria3, medison1, medison2, medison3, medison4, medison5, medison6],
             reviews: [
                 { title: 'Relaxed and Fun', content: 'Sabrina created such a friendly, easy-going vibe during her performance.' },
                 { title: 'Personal Stories', content: 'Loved hearing her share little stories between songs. Made it feel intimate.' },

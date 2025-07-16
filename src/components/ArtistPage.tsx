@@ -32,11 +32,11 @@ export default function ArtistPage() {
                     <div className="rightWrapper">
                         <h3>Gallery</h3>
                         <div className="gallery">
-                            {artist.gallery?.map((imgUrl, index, ) => (
-                                <div className="galleryItem" key={index}>
-                                    <img src={imgUrl} alt={`Gallery ${index}`} onClick={() => setModalImage(imgUrl)} />
-                                </div>
-                            ))}
+                                {artist.gallery?.map((imgUrl, index, ) => (
+                                    <div className="galleryItem" key={index}>
+                                        <img src={imgUrl} alt={`Gallery ${index}`} onClick={() => setModalImage(imgUrl)} />
+                                    </div>
+                                ))}
                         </div>
                         <div className="reviews">
                             <h3>Reviews</h3>
