@@ -1,12 +1,11 @@
-import {useState, useRef} from 'react';
+import { useState, useRef } from 'react';
 import '@styles/portfolio.scss';
-import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "@store/store";
-import {moveNext, movePrev} from "@store/slices/portfolioSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@store/store";
+import { moveNext, movePrev } from "@store/slices/portfolioSlice";
 import ArrowRight from "@svg/arrowRight";
 import ArrowLeft from "@svg/leftArrow";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 export default function Portfolio() {
     const items = useSelector((state: RootState) => state.portfolio.items);
@@ -15,6 +14,9 @@ export default function Portfolio() {
     const [offset, setOffset] = useState(-1);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const trackRef = useRef<HTMLDivElement>(null);
+
+    const touchStartX = useRef<number | null>(null);
+    const touchEndX = useRef<number | null>(null);
 
     const extendedItems = [
         items[items.length - 1],
@@ -25,13 +27,13 @@ export default function Portfolio() {
     const handleNext = () => {
         if (isTransitioning) return;
         setIsTransitioning(true);
-        setOffset((prev) => prev - 1);
+        setOffset(prev => prev - 1);
     };
 
     const handlePrev = () => {
         if (isTransitioning) return;
         setIsTransitioning(true);
-        setOffset((prev) => prev + 1);
+        setOffset(prev => prev + 1);
     };
 
     const onTransitionEnd = () => {
@@ -65,11 +67,36 @@ export default function Portfolio() {
         }
     };
 
+    // Свайп-события
+    const handleTouchStart = (e: React.TouchEvent) => {
+        touchStartX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        touchEndX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+        if (touchStartX.current !== null && touchEndX.current !== null) {
+            const deltaX = touchStartX.current - touchEndX.current;
+
+            if (Math.abs(deltaX) > 50) {
+                if (deltaX > 0) {
+                    handleNext();
+                } else {
+                    handlePrev();
+                }
+            }
+        }
+
+        touchStartX.current = null;
+        touchEndX.current = null;
+    };
 
     return (
         <section className="portfolioWrapper" id="portfolio">
             <button className="arrow left" onClick={handlePrev}>
-                <ArrowLeft width={30} height={30}/>
+                <ArrowLeft width={30} height={30} />
             </button>
 
             <div className="portfolio">
@@ -81,6 +108,9 @@ export default function Portfolio() {
                         transition: isTransitioning ? 'transform 0.5s ease' : 'none',
                     }}
                     onTransitionEnd={onTransitionEnd}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
                 >
                     {extendedItems.map((item, i) => (
                         <Link
@@ -94,11 +124,12 @@ export default function Portfolio() {
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 cursor: 'pointer',
-                            }}>
+                            }}
+                        >
                             <div className="itemsWrapper">
                                 <div className="bottomInfoWrapper">
                                     <h2>{item.name}</h2>
-                                    <ArrowRight width={30} height={30}/>
+                                    <ArrowRight width={30} height={30} />
                                 </div>
                             </div>
                         </Link>
@@ -107,7 +138,7 @@ export default function Portfolio() {
             </div>
 
             <button className="arrow right" onClick={handleNext}>
-                <ArrowRight width={30} height={30}/>
+                <ArrowRight width={30} height={30} />
             </button>
         </section>
     );
