@@ -145,6 +145,7 @@
       & > .videos {
         width: 35%;
         height: 100%;
+        overflow: hidden;
 
         @media (max-width: 920px) {
           width: 100%;
