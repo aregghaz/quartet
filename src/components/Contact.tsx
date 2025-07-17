@@ -30,7 +30,7 @@ export default function Contact() {
                     ))}
                     <h3>{finalNote}</h3>
                     <Button text={buttonText} buttonWidth={142} buttonHeight={41} style={{
-                        backgroundColor: "#DBA14D",
+                        backgroundColor: "#FF5252",
                         color: "#000000",
                         fontSize: "14px",
                     }}/>
