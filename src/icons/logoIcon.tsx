@@ -17,8 +17,8 @@ const LogoIcon:FC<LogoIconProps> = ({width, height,}) => (
     >
         <defs>
             <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style={{ stopColor: 'rgb(255,190,16)' }} />
-                <stop offset="100%" style={{ stopColor: 'rgba(255,136,0,0.96)' }} />
+                <stop offset="0%" style={{ stopColor: '#FF5252' }} />
+                <stop offset="100%" style={{ stopColor: '#651414' }} />
             </linearGradient>
         </defs>
         <g

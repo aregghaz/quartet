@@ -5,7 +5,7 @@ const initialState = {
         { id: '2', url: 'https://www.facebook.com/', img: <></> },
         { id: '3', url: 'https://www.youtube.com/', img: <></> },
     ],
-    iconColor: '#FFBE10FF',
+    iconColor: '#FF5252',
 };
 const socSlice = createSlice({
     name: 'soc',
